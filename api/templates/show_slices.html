@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+    <title>
+        My Images
+    </title>
+</head>
+<body>
+    {{first_event}}  {{second_event}}
+    {% for hist in hists %}
+    <img src="{{url_for('static', filename=hist)}}" name="{{hist}}" alt="{{hist}}">
+    {% endfor %}
+</body>
+</html>`</html>

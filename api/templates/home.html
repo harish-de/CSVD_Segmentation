@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSVD Detection</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function ValidateForm()
+        {
+            var radioButtons = document.getElementsByName("lesion");
+            for(var i = 0; i < radioButtons.length; i++)
+            {
+                if(radioButtons[i].checked == true)
+                {
+                    if(confirm("You have selected " + radioButtons[i].value + " to detect the lesion. Is that correct?"))
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
+
+        function yesnoCheck()
+        {
+            if (document.getElementById('CMB').checked)
+            {
+                document.getElementById('cmb_fields').style.display = 'block';
+                document.getElementById('wmh_fields').style.display = 'none';
+        } else
+            {
+            document.getElementById('wmh_fields').style.display = 'block';
+            document.getElementById('cmb_fields').style.display = 'none';
+        }
+    }
+    </script>
+    </head>
+
+<body background="static/background.jpg">
+
+    <div id="loading">
+    <img id="loading-image" src="static/loader.gif" alt="Loading..." />
+    </div>
+    <div id="center">
+        <style>
+            h1 {
+                text-align:center;
+                font-size:50px;
+                position: absolute;
+                width: 800px;
+                height: 200px;
+                color: white;
+                z-index: 15;
+                top: 30%;
+                left: 50%;
+                margin: -100px 0 0 -350px;
+            }
+
+        </style>
+            <h1>CSVD Biomarker Detection Project</h1>
+        </div>
+    <p>
+    <div class="center-block">
+        <style type="text/css">
+            .center-block {
+            position: absolute;
+            width: 400px;
+            height: 200px;
+            color: white;
+            z-index: 15;
+            top: 50%;
+            left: 50%;
+            margin: -100px 0 0 -150px;
+            }
+
+            #loading {
+            background: rgba( 255, 255, 255, 0.8 );
+            display: none;
+            height: 100%;
+            position: fixed;
+            width: 100%;
+            z-index: 9999;
+            }
+
+            #loading-image {
+             left: 50%;
+             margin-left: -32px;
+             margin-top: -32px;
+             position: absolute;
+             top: 50%;
+            }
+
+
+        </style>
+
+        <form method="post" enctype="multipart/form-data" id="myform" name="myform" action="{{ url_for('upload_file') }}">
+            <fieldset>
+            <legend>Which lesion you want to detect ??</legend>
+            <input type="radio" name="lesion" value="CMB" onclick="javascript:yesnoCheck()" id="CMB" required>CMB<br> <br>
+            <input type="radio" name="lesion" value="WMH" onclick="javascript:yesnoCheck()" id="WMH">WMH<br> <br>
+                <div id = "wmh_fields" style="display:none">
+            <input type="file" name="image" value="flair_image" id="flair_image">upload flair image<br>
+            <input type="file" name="image" value="t1_image" id="t1_image">upload t1 image<br>
+                </div>
+                <div id = "cmb_fields" style="display:none">
+            <input type="file" name="cmb_image" value="cmb_image" id="cmb_image">upload cmb image<br>
+                </div>
+            <input type="submit" value="Submit" id="submit"> <br>
+            </fieldset>
+        </form>
+        </div>
+        </p>
+
+        <script>
+            $(document).ready(function(){
+            $("#myform").on("submit", function(){
+            $("#loading").fadeIn();
+            });
+            });
+        </script>
+</body>
+</html>
