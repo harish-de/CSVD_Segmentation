@@ -1,4 +1,4 @@
-
+# HOWTO
 ### preprocessing.py
 * specify respective paths against GE3T_DIR, SINGAPORE_DIR, and UTRECHT_DIR
 * create directories as 'dir_input', 'dir_output', 'out_dir_input_slices', 'out_dir_groudtruth_slices'
