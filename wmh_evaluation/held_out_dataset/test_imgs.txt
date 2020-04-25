@@ -1,9 +1,0 @@
-P:\Clean_Datasets_Backup\WMH\Amsterdam_GE3T\GE3T\100
-P:\Clean_Datasets_Backup\WMH\Amsterdam_GE3T\GE3T\107
-P:\Clean_Datasets_Backup\WMH\Amsterdam_GE3T\GE3T\132
-P:\Clean_Datasets_Backup\WMH\Singapore\Singapore\58
-P:\Clean_Datasets_Backup\WMH\Singapore\Singapore\64
-P:\Clean_Datasets_Backup\WMH\Singapore\Singapore\66
-P:\Clean_Datasets_Backup\WMH\Utrecht\Utrecht\33
-P:\Clean_Datasets_Backup\WMH\Utrecht\Utrecht\35
-P:\Clean_Datasets_Backup\WMH\Utrecht\Utrecht\39
