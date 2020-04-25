@@ -1,9 +1,12 @@
 
 ### preproc_sing_ge3t.py 
 
-* specify respective paths against GE3T_DIR, SINGAPORE_DIR, and UTRECHT_DIR
+* specify respective paths against GE3T_DIR, SINGAPORE_DIR
+* provide augmented files of Ge3t against 'GE3T_AUG_DIR'
+* provide augmented files of singapore against 'SINGAPORE_AUG_DIR'
 * create directories as 'dir_input', 'dir_output', 'out_dir_input_slices', 'out_dir_groudtruth_slices'
 * outputs 'data_sing_ge3t.sav' containing preprocessed 2D axial slices  
+
 
 ### train_sing_ge3t.py
 * create directory 'checkpoints_sing_ge3t' to save each epoch model before executing this script
