@@ -1,6 +1,8 @@
 ### preproc_utr_ge3t.py 
 
-* specify respective paths against GE3T_DIR, SINGAPORE_DIR, and UTRECHT_DIR
+* specify respective paths against GE3T_DIR and UTRECHT_DIR
+* provide augmented files of Ge3t against 'GE3T_AUG_DIR'
+* provide augmented files of utrecht against 'UTRECHT_AUG_DIR'
 * create directories as 'dir_input', 'dir_output', 'out_dir_input_slices', 'out_dir_groudtruth_slices'
 * outputs 'data_utr_ge3t.sav' containing preprocessed 2D axial slices  
 
@@ -12,5 +14,5 @@
 
 * Provide the path for singapore dataset in 'HOME'
 * specify suitable checkpoint_index against path (as in path = 'checkpoints\\checkpoint_30.pth.tar')
-* outputs 'evaluation_ge3t.txt' containing metric scores of all Amsterdam_GE3T subjects
+* outputs 'evaluation_singapore.txt' containing metric scores of all Amsterdam_GE3T subjects
 
