@@ -8,7 +8,7 @@
 * create directory 'checkpoints_utr_ge3t' to save each epoch model before executing this script
 * outputs 'plot_loss_utr_ge3t.txt' containing list of epoch index vs training & validation loss summary
 
-### test_ge3t_cv.py
+### test_singapore_cv.py
 
 * Provide the path for singapore dataset in 'HOME'
 * specify suitable checkpoint_index against path (as in path = 'checkpoints\\checkpoint_30.pth.tar')
