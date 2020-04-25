@@ -4,7 +4,7 @@
 * create directories as 'dir_input', 'dir_output', 'out_dir_input_slices', 'out_dir_groudtruth_slices'
 * outputs 'data_utr_ge3t.sav' containing preprocessed 2D axial slices  
 
-### train_utr_sing.py
+### train_utr_ge3t.py
 * create directory 'checkpoints_utr_ge3t' to save each epoch model before executing this script
 * outputs 'plot_loss_utr_ge3t.txt' containing list of epoch index vs training & validation loss summary
 
