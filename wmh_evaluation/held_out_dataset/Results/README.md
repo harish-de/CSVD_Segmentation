@@ -6,3 +6,6 @@
 ### plot_epochloss_heldout.csv
 * network is trained for 100 epochs
 * contains training & validation loss against current epoch index
+
+### Loss_Heldout_testing.png
+* line graph plotted for epoch vs training & validation loss
