@@ -6,7 +6,9 @@
 
 ### preproc_utr_sin.py 
 
-* specify respective paths against GE3T_DIR, SINGAPORE_DIR, and UTRECHT_DIR
+* specify respective paths against SINGAPORE_DIR, and UTRECHT_DIR
+* provide augmented files of utrecht against 'UTRECHT_AUG_DIR'
+* provide augmented files of singapore against 'SINGAPORE_AUG_DIR'
 * create directories as 'dir_input', 'dir_output', 'out_dir_input_slices', 'out_dir_groudtruth_slices'
 * outputs 'data_utr_sing.sav' containing preprocessed 2D axial slices  
 
