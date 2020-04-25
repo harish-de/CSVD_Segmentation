@@ -336,7 +336,7 @@ for subject in os.listdir(HOME):
 
 
 
-file_name = 'evaluation_singapore.txt'
+file_name = 'evaluation_utrecht.txt'
 
 print('Average Dice score for held-out test set', (sum(dsc_list)/len(dsc_list)))
 # print('Average volume differenc score for held-out test set', sum(avd_list)/len(avd_list))
