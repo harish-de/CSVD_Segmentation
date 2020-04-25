@@ -9,3 +9,7 @@
 ### train_network.py
 * create directory checkpoints to save each epoch model before executing this script
 * outputs ''plot_loss.txt' containing list of epoch index vs training & validation loss summary
+
+### test.py
+* specify suitable checkpoint_index against path (as in path = 'checkpoints\\checkpoint_75.pth.tar')
+* outputs 'evaluation_heldout.txt' containing metric scores of all 9 test subjects and average scores
