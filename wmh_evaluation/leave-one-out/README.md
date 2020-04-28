@@ -6,7 +6,7 @@
 
 * Running this file leaves one image for testing and trains all other images , for all   60 possible combinations
 
-* Checkpoints folder is created for every combination of leave one out and each folder has checkpoints at each epoch.
+* Checkpoint folder is created for every combination of leave one out and each folder has checkpoints at each epoch.
 
 * This file returns a 'plot_loss_index.txt' containing list of epoch index vs training & validation loss summary,for every combinations of leave one out
 
