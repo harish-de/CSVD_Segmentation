@@ -4,7 +4,7 @@
 
 ### leave-one-out.py
 
-* Running this file leaves one image for testing and trains all other images for all   60 possible combinations
+* Running this file leaves one image for testing and trains all other images , for all   60 possible combinations
 
 * Checkpoints folder is created for every combination of leave one out and each folder has checkpoints at each epoch.
 
