@@ -1,0 +1,340 @@
+// MDL v1 utf8
+mevislabVersion = 3.2
+network  {
+  watchlist = ""
+}
+module itkImageFileReader {
+  internal  {
+    frame = "1093 349 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1154 354 402 467"
+        sizeHint = "402 467"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = itkImageFileReader
+    fileDataType = float
+    autoDetermineDataType = TRUE
+    correctSubVoxelShift = TRUE
+    fileDimension = 3
+    info = "Loading okay."
+    numDims = 3
+    fileType = TypeNotApplicable
+    componentType = float
+    pixelType = SCALAR
+    loaderType = NiftiImageIO
+    outputMetaDataStr = "ITK_FileNotes : 
+aux_file : 
+bitpix : 32
+cal_max : 0
+cal_min : 0
+datatype : 16
+descrip : 
+dim[0] : 3
+dim[1] : 200
+dim[2] : 200
+dim[3] : 83
+dim[4] : 1
+dim[5] : 1
+dim[6] : 1
+dim[7] : 1
+dim_info : 
+intent_code : 0
+intent_name : 
+intent_p1 : 0
+intent_p2 : 0
+intent_p3 : 0
+pixdim[0] : 1
+pixdim[1] : 1.2
+pixdim[2] : 0.9766
+pixdim[3] : 3
+pixdim[4] : 1
+pixdim[5] : 1
+pixdim[6] : 1
+pixdim[7] : 1
+qform_code : 2
+qoffset_x : 77.9
+qoffset_y : 167.683
+qoffset_z : -121.072
+quatern_b : 0
+quatern_c : 0
+quatern_d : 1
+scl_inter : 0
+scl_slope : 1
+sform_code : 1
+slice_code : 
+slice_duration : 0
+slice_end : 0
+slice_start : 0
+srow_x : -1.2 0 0 77.9
+srow_y : 0 -0.9766 0 167.683
+srow_z : 0 0 3 -121.072
+toffset : 0
+vox_offset : 352
+xyzt_units : 
+"
+    suppressErrorPosting = FALSE
+    unresolvedFileName = D:/de/12_credit/WMH/checkpoint100/viz/105_predicted.nii
+  }
+}
+module itkImageFileReader {
+  internal  {
+    frame = "497 469 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "759 344 402 467"
+        sizeHint = "402 467"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = itkImageFileReader1
+    fileDataType = float
+    autoDetermineDataType = FALSE
+    correctSubVoxelShift = TRUE
+    fileDimension = 3
+    info = "Loading okay."
+    numDims = 3
+    fileType = TypeNotApplicable
+    componentType = float
+    pixelType = SCALAR
+    loaderType = NiftiImageIO
+    outputMetaDataStr = "ITK_FileNotes : 
+aux_file : 
+bitpix : 32
+cal_max : 0
+cal_min : 0
+datatype : 16
+descrip : 
+dim[0] : 3
+dim[1] : 200
+dim[2] : 200
+dim[3] : 83
+dim[4] : 1
+dim[5] : 1
+dim[6] : 1
+dim[7] : 1
+dim_info : 
+intent_code : 0
+intent_name : 
+intent_p1 : 0
+intent_p2 : 0
+intent_p3 : 0
+pixdim[0] : 1
+pixdim[1] : 1.2
+pixdim[2] : 0.9766
+pixdim[3] : 3
+pixdim[4] : 1
+pixdim[5] : 1
+pixdim[6] : 1
+pixdim[7] : 1
+qform_code : 2
+qoffset_x : 77.9
+qoffset_y : 167.683
+qoffset_z : -121.072
+quatern_b : 0
+quatern_c : 0
+quatern_d : 1
+scl_inter : 0
+scl_slope : 1
+sform_code : 1
+slice_code : 
+slice_duration : 0
+slice_end : 0
+slice_start : 0
+srow_x : -1.2 0 0 77.9
+srow_y : 0 -0.9766 0 167.683
+srow_z : 0 0 3 -121.072
+toffset : 0
+vox_offset : 352
+xyzt_units : 
+"
+    suppressErrorPosting = FALSE
+    unresolvedFileName = D:/de/12_credit/WMH/checkpoint100/viz/105_flair.nii.gz
+  }
+}
+module GVROrthoOverlay {
+  internal  {
+    frame = "1101 229 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1201 100 488 346"
+        sizeHint = "488 346"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GVROrthoOverlay2
+    on = TRUE
+    clipToSlice = TRUE
+    interpolationMode = FilterNearest
+    blendMode = Blend
+    useSceneLut = FALSE
+    lutCenter = 0.5
+    lutWidth = 0.5
+    baseColor = "0 0 1"
+    baseAlpha = 0.54799998
+    currentTimePoint = 0
+  }
+}
+module itkImageFileReader {
+  internal  {
+    frame = "769 557 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "724 350 402 467"
+        sizeHint = "402 467"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = itkImageFileReader2
+    fileDataType = float
+    autoDetermineDataType = TRUE
+    correctSubVoxelShift = TRUE
+    fileDimension = 3
+    info = "Loading okay."
+    numDims = 3
+    fileType = TypeNotApplicable
+    componentType = float
+    pixelType = SCALAR
+    loaderType = NiftiImageIO
+    outputMetaDataStr = "ITK_FileNotes : 
+aux_file : 
+bitpix : 32
+cal_max : 0
+cal_min : 0
+datatype : 16
+descrip : 
+dim[0] : 4
+dim[1] : 200
+dim[2] : 200
+dim[3] : 83
+dim[4] : 1
+dim[5] : 1
+dim[6] : 1
+dim[7] : 1
+dim_info : 
+intent_code : 0
+intent_name : 
+intent_p1 : 0
+intent_p2 : 0
+intent_p3 : 0
+pixdim[0] : 1
+pixdim[1] : 1.2
+pixdim[2] : 0.9766
+pixdim[3] : 3
+pixdim[4] : 0
+pixdim[5] : 1
+pixdim[6] : 1
+pixdim[7] : 1
+qform_code : 2
+qoffset_x : 77.9
+qoffset_y : 167.683
+qoffset_z : -121.072
+quatern_b : 0
+quatern_c : 0
+quatern_d : 1
+scl_inter : 0
+scl_slope : 1
+sform_code : 1
+slice_code : 
+slice_duration : 0
+slice_end : 0
+slice_start : 0
+srow_x : -1.2 0 0 77.9
+srow_y : 0 -0.9766 0 167.683
+srow_z : 0 0 3 -121.072
+toffset : 0
+vox_offset : 352
+xyzt_units : 
+"
+    suppressErrorPosting = FALSE
+    unresolvedFileName = D:/de/12_credit/WMH/checkpoint100/viz/105_actual.nii
+  }
+}
+module GVROrthoOverlay {
+  internal  {
+    frame = "725 373 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "677 389 488 346"
+        sizeHint = "488 346"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GVROrthoOverlay4
+    on = TRUE
+    clipToSlice = TRUE
+    interpolationMode = FilterNearest
+    blendMode = Add
+    useSceneLut = FALSE
+    lutCenter = 0.5
+    lutWidth = 0.5
+    baseColor = "0.666666686534882 0 0"
+    baseAlpha = 0.54799998
+    currentTimePoint = 0
+  }
+}
+module OrthoView2D {
+  internal  {
+    frame = "885 53 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "417 66 1387 936"
+        sizeHint = "400 435"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = OrthoView2D1
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    synchronizePosition = TRUE
+    layout = LAYOUT_AXIAL
+    filterMode = FILTER_LINEAR
+    synchronizeZoom = TRUE
+    synchronizePanning = FALSE
+    useGlobalInputImage = TRUE
+    snapToCenter = FALSE
+    alternCubeLayout = FALSE
+    timePoint = 0
+    useManagedInteraction = FALSE
+    enableSlicing = TRUE
+    borderOn = TRUE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    grayWidth = 8.95602035522461
+    grayCenter = 3.17547130584717
+    annotationOn = TRUE
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationFontSize = ANNO_SIZE_AUTO
+    valueHighPrecision = TRUE
+    annoCoords = Voxel
+    showCurrentPos = TRUE
+    worldPosition = "34.9000015258789 -48.5378074645996 46.9282989501953"
+    coloredMode = FALSE
+  }
+}
+connections  {
+  GVROrthoOverlay2.inImage = itkImageFileReader.output0
+  GVROrthoOverlay4.inImage = itkImageFileReader2.output0
+  OrthoView2D1.image = itkImageFileReader1.output0
+  OrthoView2D1.inInvPreLUT = GVROrthoOverlay4.outScene
+  OrthoView2D1.inInvPostLUT = GVROrthoOverlay2.outScene
+}
+networkModel = ""
