@@ -1,0 +1,33 @@
+{
+  "train": {
+    "optimizer": [
+      "Adam"
+    ],
+    "learning_rate": [
+      2e-4
+    ],
+    "num_epochs": [
+      200
+    ]
+  },
+  "data_loader": {
+    "validation_set":
+      0.3,
+    "batch_size":
+      "16"
+  },
+  "model": {
+    "conv": {
+      "kernel_size": 3,
+      "padding": 1,
+      "stride": 1
+    },
+    "max_pooling_upConvTranspose": {
+      "kernel_size": 2,
+      "stride": 2
+    }
+  },
+  "test": {
+    "checkpoint": "checkpoints\\\\checkpoint_75.pth.tar"
+  }
+}
