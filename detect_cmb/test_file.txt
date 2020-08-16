@@ -1,0 +1,7 @@
+E:\abhivanth\cmb\ADNI\groundtruth\4955_20130506_gt.nii
+E:\abhivanth\cmb\ADNI\groundtruth\4909_20120823_gt.nii
+E:\abhivanth\cmb\ADNI\groundtruth\5109_20130325_gt.nii
+E:\abhivanth\cmb\ADNI\groundtruth\5079_20150319_gt.nii
+E:\abhivanth\cmb\ADNI\groundtruth\5079_20170802_gt.nii
+E:\abhivanth\cmb\ADNI\groundtruth\5057_20140422_gt.nii
+E:\abhivanth\cmb\ADNI\groundtruth\4713_20160602_gt.nii
