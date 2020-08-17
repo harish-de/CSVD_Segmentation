@@ -1,0 +1,120 @@
+from glob import glob
+import nibabel as nib
+import os
+import numpy as np
+import itk
+
+# generate patches for the network  , both input image and ground truth
+class patch_generation():
+    x_shape = 16
+    y_shape = 16
+    z_shape = 10
+
+    patches = []
+
+    def split_filename(self, filepath):
+        path = os.path.dirname(filepath)
+        filename = os.path.basename(filepath)
+        base, ext = os.path.splitext(filename)
+        if ext == '.gz':
+            base, ext2 = os.path.splitext(base)
+            ext = ext2 + ext
+        return path, base, ext
+
+
+    def cut_3d_image(self, index_x, index_y, index_z, size_x, size_y, size_z, x_stride, y_stride, z_stride, img, image,gt):
+        stop = False
+
+        x_offset = img.shape[0] - self.x_shape
+        y_offset = img.shape[1] - self.y_shape
+        z_offset = img.shape[2] - self.z_shape
+
+        while (stop == False):
+
+            if (index_x <= x_offset and index_y <= y_offset and index_z <= z_offset):
+                cropper_input = itk.ExtractImageFilter.New(Input=image)
+                cropper_input.SetDirectionCollapseToIdentity()
+                extraction_region = cropper_input.GetExtractionRegion()
+
+                cropper_gt = itk.ExtractImageFilter.New(Input=gt)
+                cropper_gt.SetDirectionCollapseToIdentity()
+                extraction_region_gt = cropper_gt.GetExtractionRegion()
+
+                size = extraction_region.GetSize()
+                size[0] = int(size_x)
+                size[1] = int(size_y)
+                size[2] = int(size_z)
+
+                index = extraction_region.GetIndex()
+                index[0] = int(index_x)
+                index[1] = int(index_y)
+                index[2] = int(index_z)
+
+                extraction_region.SetSize(size)
+                extraction_region.SetIndex(index)
+
+                extraction_region_gt.SetSize(size)
+                extraction_region_gt.SetIndex(index)
+
+                cropper_input.SetExtractionRegion(extraction_region)
+                cropper_gt.SetExtractionRegion(extraction_region_gt)
+
+                self.patches.append([cropper_input,cropper_gt])
+
+            # now x,y,z index are 0
+            # will cut one layer after another (top to bottom)
+            # keeping y = 0, for every increase of x by 16 pos, iterate z-axis to 100 in installments of 10
+            # i.e when z becomes 100, increment x by 16 and put back z as 0
+            # if x reaches 512, then set x = 0, z = 0 but increment y by 16 pos
+
+            if index_x <= x_offset:
+                if index_z < z_offset:
+                    index_z += z_stride
+
+                else:
+                    index_x += x_stride
+                    index_z = 0
+
+            else:
+
+                if index_x > x_offset:
+                    if index_y > y_offset:
+                        stop = True
+
+                    else:
+                        index_x = 0
+
+                if index_y < y_offset:
+                    index_y += 16
+                    index_x = 0
+                    index_z = 0
+                    # if (img.shape[2] != 44):
+                    #     index_z = 0
+                    # else:
+                    #     index_z = 6
+                else:
+                    stop = True
+
+    def create_3dpatches(self,subjects):
+
+        for count, (img,gt) in enumerate(subjects):
+
+            image = itk.GetImageFromArray(img)
+            gtruth = itk.GetImageFromArray(gt)
+
+            x_stride = self.x_shape
+            y_stride = self.y_shape
+            z_stride = self.z_shape
+
+            index_x = 0
+            index_y = 0
+            index_z = 0
+
+            size_x = self.x_shape
+            size_y = self.y_shape
+            size_z = self.z_shape
+
+            self.cut_3d_image(index_x, index_y, index_z, size_x, size_y, size_z, x_stride, y_stride,
+                         z_stride, img, image,gtruth)
+
+        return self.patches

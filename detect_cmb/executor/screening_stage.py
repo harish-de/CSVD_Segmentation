@@ -41,7 +41,7 @@ class call_screening1():
         :param filename:
         :return:
         """
-        filename = 'checkpoint_screeningStage1_corrected\\checkpoint_' + str(count) + '.pth.tar'
+        filename = 'checkpoints\\ss1_1\\checkpoint_' + str(count) + '.pth.tar'
         torch.save(state, filename)
 
     def train(self, train_loader, model, epoch, num_epochs):
@@ -91,7 +91,7 @@ class call_screening1():
         return losses.avg
 
     def validate(self, val_loader, epoch_index):
-        path = 'checkpoint_screeningStage1_corrected\\checkpoint_' + str(epoch_index) + '.pth.tar'
+        path = 'checkpoints\\ss1_1\\checkpoint_' + str(epoch_index) + '.pth.tar'
         device = torch.device('cuda')
         model = screening.screening()
         model.to(device)
@@ -112,6 +112,7 @@ class call_screening1():
 
 
         for i, (images, labels) in pbar:
+            images = images.float()
             images = Variable(images.cuda())
 
             images = images.unsqueeze(dim=1)
@@ -147,7 +148,6 @@ class call_screening1():
         train_loader = create_dataloader.convert2dataloader().create_dset_screening_stage1(train_balanced)
 
         val_loader = create_dataloader.convert2dataloader().create_dset_screening_stage1(valid_balanced)
-
 
         model = screening.screening().cuda()
 

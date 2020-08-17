@@ -32,19 +32,11 @@ def balanced_dataset(subjects):
         else:
             negative_list.append((x, 0.0))
 
-    print('Executed all folders')
-
     positive_count = len(positive_list)
     negative_list_1 = random.sample(negative_list, positive_count)
 
     balanced_list = positive_list + negative_list_1
 
-    print(len(positive_list))
-    print(len(negative_list_1))
-
     random.shuffle(balanced_list)
-
-    print(len(balanced_list))
-
     return balanced_list
 

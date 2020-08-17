@@ -49,7 +49,7 @@ class splitDataset():
             else:
                 test_data.append(path)
 
-        print(len(train_data),len(test_data),len(val_data))
+        # print(len(train_data),len(test_data),len(val_data))
 
         with open('test_file.txt', 'w') as f:
             for path in test_data:
