@@ -1,9 +1,8 @@
 from flask import Flask, request, render_template, jsonify, flash, redirect, url_for, sessions, send_from_directory
 from werkzeug.utils import secure_filename
 import os
-from flask_session import Session
 import test
-import natsort
+
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_FOLDER = os.path.join(APP_ROOT, 'static')
@@ -11,7 +10,6 @@ ALLOWED_EXTENSIONS = {'nii','gz'}
 
 
 app = Flask(__name__)
-sess = Session()
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
@@ -35,7 +33,7 @@ def upload_file():
             if filename.find("FLAIR") == 0 or filename.find("flair") == 0:
                 if file and allowed_file(file.filename):
                     # filename = secure_filename(file.filename)
-                    filename = 'image_flair.nii.gz'
+                    filename = 'Flair.nii.gz'
                     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 else:
                     return render_template('fileerror.html')
@@ -44,7 +42,7 @@ def upload_file():
 
                 if file and allowed_file(file.filename):
                     # filename = secure_filename(file.filename)
-                    filename = 'image_t1.nii.gz'
+                    filename = 'T1.nii.gz'
                     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 else:
                     return render_template('fileerror.html')
@@ -52,8 +50,8 @@ def upload_file():
                 return render_template('fileerror.html')
 
         test.main()
-        os.remove('static/image_flair.nii.gz')
-        os.remove('static/image_t1.nii.gz')
+        os.remove('static/Flair.nii.gz')
+        os.remove('static/T1.nii.gz')
         return render_template('viewer.html')
     elif request.method == 'POST' and request.form['lesion'] == 'CMB':
         return render_template('cmb.html')
@@ -79,6 +77,5 @@ def home():
 if __name__ == '__main__':
     app.secret_key = 'super secret key'
     app.config['SESSION_TYPE'] = 'filesystem'
-    sess.init_app(app)
     app.debug = False
     app.run()
