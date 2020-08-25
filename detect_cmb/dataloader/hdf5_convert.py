@@ -53,18 +53,11 @@ for input_files,gt_files in zip(input_list,gt_list):
         shape = input_image_patch.shape
 
 
-        grp1.create_dataset(input,shape=shape,dtype=h5py.h5t.IEEE_F32BE,data=input_image_patch)
-        grp2.create_dataset(output, shape=shape, dtype=h5py.h5t.IEEE_F32BE, data=output_image_patch)
+        grp1.create_dataset(input,shape=shape,dtype=h5py.h5t.IEEE_F32BE,data=input_image_patch,compression="gzip", compression_opts=5)
+        grp2.create_dataset(output, shape=shape, dtype=h5py.h5t.IEEE_F32BE, data=output_image_patch,compression="gzip", compression_opts=5)
         count += 1
 
-        if(count == 10000):
-            print('10000')
-        if (count == 20000):
-            print('10000')
-        if (count == 30000):
-            print('10000')
-        if (count == 60000):
-            print('10000')
+        
 
 
 hf.close()
